@@ -1,6 +1,6 @@
 {
   "name": "@liuyunjs/utils",
-  "version": "1.0.0-beta4",
+  "version": "1.0.0-beta5",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "liuyunjs",
@@ -11,7 +11,6 @@
     "url": "https://github.com/liuyunjs/utils/tree/main"
   },
   "scripts": {
-    "postinstall": "npm run build",
     "build": "rimraf lib; tsc",
     "test": "jest"
   },
