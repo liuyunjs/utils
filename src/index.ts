@@ -2,6 +2,7 @@ export { toString } from './toString';
 export { hasOwnProperty } from './hasOwnProperty';
 export { getType } from './getType';
 
+export { isPromise } from './isPromise';
 export { isArray } from './isArray';
 export { isArrayLike } from './isArrayLike';
 export { isFunction } from './isFunction';
