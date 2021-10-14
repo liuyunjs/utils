@@ -2610,6 +2610,11 @@ is-generator-fn@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-generator-fn/-/is-generator-fn-2.1.0.tgz#7d140adc389aaf3011a8f2a2a4cfa6faadffb118"
   integrity sha512-cTIB4yPYL/Grw0EaSzASzg6bBy9gqCofvWN8okThAYIxKJZC+udlRAmGbM0XLeniEJSs8uEgHPGuHSe1XsOLSQ==
 
+is-generator-fn@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-generator-fn/-/is-generator-fn-3.0.0.tgz#196814cf2e44a75212d34c12f3ce6f43a7821e7c"
+  integrity sha512-Kn+4AXo1HHewGjikHNfxCFv58+XGeXAalWE5Ci1bgm/DkmDte9zFyqMn6xrzQKCgyhefxz9I8rseWUGI0jSecQ==
+
 is-glob@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/is-glob/-/is-glob-3.1.0.tgz#7ba5ae24217804ac70707b96922567486cc3e84a"
@@ -4432,6 +4437,11 @@ ts-toolbelt@^9.6.0:
   version "9.6.0"
   resolved "https://registry.npm.taobao.org/ts-toolbelt/download/ts-toolbelt-9.6.0.tgz#50a25426cfed500d4a09bd1b3afb6f28879edfd5"
   integrity sha1-UKJUJs/tUA1KCb0bOvtvKIee39U=
+
+tslib@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tunnel-agent@^0.6.0:
   version "0.6.0"

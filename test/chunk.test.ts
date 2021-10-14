@@ -1,4 +1,4 @@
-import { chunk } from '../src/chunk';
+import { chunk } from '../src';
 
 test(' first argument must be a array', () => {
   // @ts-ignore
@@ -30,7 +30,12 @@ test('The second parameter must be an integer and greater than 0', () => {
 });
 
 test('chunk', () => {
-  expect(chunk([1, 2, 3, 4, 5, 6, 7], 2)).toEqual([[1, 2], [3, 4], [5, 6], [7]]);
+  expect(chunk([1, 2, 3, 4, 5, 6, 7], 2)).toEqual([
+    [1, 2],
+    [3, 4],
+    [5, 6],
+    [7],
+  ]);
   expect(chunk([1, 2, 3, 4, 5, 6, 7], 3)).toEqual([[1, 2, 3], [4, 5, 6], [7]]);
   expect(chunk([1, 2, 3, 4, 5, 6, 7], 1)).toEqual([1, 2, 3, 4, 5, 6, 7]);
 });

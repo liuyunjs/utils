@@ -1,4 +1,4 @@
-import { merge } from '../src/merge';
+import { merge } from '../src';
 
 test('throws if first argument is not an array、plain object、function', () => {
   //  @ts-ignore
@@ -37,7 +37,7 @@ test('merge plain object', () => {
 });
 
 test('merge array', () => {
-  const arr1 = [];
+  const arr1: any[] = [];
   const arr2 = [1, 2, [3, 4]];
   const arr3 = [2, 3, [4]];
   const result = merge(arr1, arr2, arr3);
@@ -52,7 +52,14 @@ test('merge array', () => {
 test('merge array to plain object or merge plain object to array', () => {
   const obj = { x: 1, y: 1, z: { x: 1 } };
   const arr = [1, 2, [3, 4]];
-  expect(merge({}, obj, arr)).toEqual({ x: 1, y: 1, z: { x: 1 }, 0: 1, 1: 2, 2: [3, 4] });
+  expect(merge({}, obj, arr)).toEqual({
+    x: 1,
+    y: 1,
+    z: { x: 1 },
+    0: 1,
+    1: 2,
+    2: [3, 4],
+  });
   const equalValue = arr.slice();
   //  @ts-ignore
   equalValue.x = 1;

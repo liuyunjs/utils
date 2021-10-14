@@ -1,4 +1,4 @@
-import { once } from '../src/once';
+import { once } from '../src';
 
 test('function called once', () => {
   const fn = once(Math.random);

@@ -1,52 +1,102 @@
-export { toString } from './toString';
-export { hasOwnProperty } from './hasOwnProperty';
-export { getType } from './getType';
+import { toString } from './toString';
+import { hasOwnProperty } from './hasOwnProperty';
+import { getType } from './getType';
 
-export { isPromise } from './isPromise';
-export { isArray } from './isArray';
-export { isArrayLike } from './isArrayLike';
-export { isFunction } from './isFunction';
-export { isNil } from './isNil';
-export { isNull } from './isNull';
-export { isNumber } from './isNumber';
-export { isObject } from './isObject';
-export { isAnyObject } from './isAnyObject';
-export { isPlainObject } from './isPlainObject';
-export { isString } from './isString';
-export { isUndefined } from './isUndefined';
-export { isBoolean } from './isBoolean';
-export { isInteger } from './isInteger';
-export { isSafeInteger } from './isSafeInteger';
-export { isSymbol } from './isSymbol';
-export { isPrimitive } from './isPrimitive';
+import { isPromise } from './isPromise';
+import { isArray } from './isArray';
+import { isArrayLike } from './isArrayLike';
+import { isFunction } from './isFunction';
+import { isGeneratorFunction } from './isGeneratorFunction';
+import { isNil } from './isNil';
+import { isNull } from './isNull';
+import { isNumber } from './isNumber';
+import { isObject } from './isObject';
+import { isAnyObject } from './isAnyObject';
+import { isPlainObject } from './isPlainObject';
+import { isString } from './isString';
+import { isUndefined } from './isUndefined';
+import { isBoolean } from './isBoolean';
+import { isInteger } from './isInteger';
+import { isSafeInteger } from './isSafeInteger';
+import { isSymbol } from './isSymbol';
+import { isPrimitive } from './isPrimitive';
 
-export { isBuffer } from './isBuffer';
-export { isArrayBuffer } from './isArrayBuffer';
-export { isArrayBufferView } from './isArrayBufferView';
-export { isBlob } from './isBlob';
-export { isFile } from './isFile';
-export { isFormData } from './isFormData';
-export { isStream } from './isStream';
+import { isBuffer } from './isBuffer';
+import { isArrayBuffer } from './isArrayBuffer';
+import { isArrayBufferView } from './isArrayBufferView';
+import { isBlob } from './isBlob';
+import { isFile } from './isFile';
+import { isFormData } from './isFormData';
+import { isStream } from './isStream';
 
-export { isDate } from './isDate';
+import { isDate } from './isDate';
 
-export { isURLSearchParams } from './isURLSearchParams';
+import { isURLSearchParams } from './isURLSearchParams';
 
 //  function
-export { debounce } from './debounce';
-export { once } from './once';
-export { memoizeOnce } from './memoizeOnce';
-export { memoize } from './memoize';
-export { curry } from './curry';
+import { debounce } from './debounce';
+import { once } from './once';
+import { memoizeOnce } from './memoizeOnce';
+import { memoize } from './memoize';
+import { curry } from './curry';
 
 //  array object
-export { chunk } from './chunk';
-export { groupBy } from './groupBy';
-export { equal } from './equal';
-export { merge } from './merge';
-export { set } from './set';
-export { get } from './get';
+import { chunk } from './chunk';
+import { groupBy } from './groupBy';
+import { equal } from './equal';
+import { merge } from './merge';
+import { set } from './set';
+import { get } from './get';
 
 // number
-export { modulo } from './modulo';
-export { clamp } from './clamp';
+import { modulo } from './modulo';
+import { clamp } from './clamp';
+
+import { uniqueId } from './uniqueId';
+
+export {
+  toString,
+  hasOwnProperty,
+  getType,
+  isPromise,
+  isArray,
+  isArrayLike,
+  isNumber,
+  isString,
+  isPrimitive,
+  isFunction,
+  isInteger,
+  isBlob,
+  isBuffer,
+  isDate,
+  isFile,
+  isNil,
+  isNull,
+  isAnyObject,
+  isBoolean,
+  isObject,
+  isArrayBuffer,
+  isSymbol,
+  isStream,
+  isUndefined,
+  isArrayBufferView,
+  isFormData,
+  isSafeInteger,
+  isPlainObject,
+  isURLSearchParams,
+  once,
+  modulo,
+  memoize,
+  merge,
+  memoizeOnce,
+  clamp,
+  curry,
+  chunk,
+  debounce,
+  get,
+  groupBy,
+  set,
+  equal,
+  uniqueId,
+  isGeneratorFunction,
+};

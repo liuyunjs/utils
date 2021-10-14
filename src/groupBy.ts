@@ -1,4 +1,3 @@
-import justGroupBy from 'just-group-by';
 import { isFunction } from './isFunction';
 import { isString } from './isString';
 import { isSymbol } from './isSymbol';
@@ -7,6 +6,8 @@ type PropertyKey = string | symbol;
 type Stringifyable = {
   toString: () => string;
 };
+
+const justGroupBy = require('just-group-by');
 
 export function groupBy<T>(
   arr: T[],

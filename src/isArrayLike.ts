@@ -1,4 +1,4 @@
 // @ts-ignore
-import isArrayish from 'is-arrayish';
+// import isArrayish from 'is-arrayish';
 
-export const isArrayLike: (val: any) => boolean = isArrayish;
+export const isArrayLike: (val: any) => boolean = require('is-arrayish');

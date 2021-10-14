@@ -1,4 +1,4 @@
-import { isUndefined } from '../src/isUndefined';
+import { isUndefined } from '../src';
 
 test('isUndefined 判断', () => {
   expect(isUndefined(undefined)).toBe(true);

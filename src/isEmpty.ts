@@ -1,5 +1,2 @@
-// @ts-ignore
-import is from 'just-is-empty';
-
 //  是否为null undefined {} [] '' ...
-export const isEmpty: (val: any) => boolean = is;
+export const isEmpty: (val: any) => boolean = require('just-is-empty');

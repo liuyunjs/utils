@@ -1,6 +1,7 @@
 import { isNaN } from './isNaN';
 import { isArrayLike } from './isArrayLike';
 import { isArrayBufferView } from './isArrayBufferView';
+import { hasOwnProperty } from './hasOwnProperty';
 
 const maybeEqual = (a: any, b: any, level: number) => {
   if (level) {
@@ -19,7 +20,8 @@ export const equal = (a: any, b: any, level = -1) => {
     if (isArrayLike(a)) {
       length = a.length;
       if (length != b.length) return false;
-      for (i = length; i-- !== 0; ) if (!maybeEqual(a[i], b[i], level)) return false;
+      for (i = length; i-- !== 0; )
+        if (!maybeEqual(a[i], b[i], level)) return false;
       return true;
     }
 
@@ -53,16 +55,19 @@ export const equal = (a: any, b: any, level = -1) => {
       return true;
     }
 
-    if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
-    if (a.valueOf !== Object.prototype.valueOf) return a.valueOf() === b.valueOf();
-    if (a.toString !== Object.prototype.toString) return a.toString() === b.toString();
+    if (a.constructor === RegExp)
+      return a.source === b.source && a.flags === b.flags;
+    if (a.valueOf !== Object.prototype.valueOf)
+      return a.valueOf() === b.valueOf();
+    if (a.toString !== Object.prototype.toString)
+      return a.toString() === b.toString();
 
     keys = Object.keys(a);
     length = keys.length;
     if (length !== Object.keys(b).length) return false;
 
     for (i = length; i-- !== 0; ) {
-      if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
+      if (!hasOwnProperty(b, keys[i])) return false;
       e = keys[i];
       if (!maybeEqual(a[e], b[e], level)) return false;
     }

@@ -1,4 +1,4 @@
-import { modulo } from '../src/modulo';
+import { modulo } from '../src';
 
 test('modulo 取余', () => {
   expect(modulo(10, 3)).toBe(1);

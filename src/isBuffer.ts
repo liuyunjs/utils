@@ -1,3 +1,1 @@
-import is from 'is-buffer';
-
-export const isBuffer = is as (val: any) => val is Buffer;
+export const isBuffer = require('is-buffer') as (val: any) => val is Buffer;
