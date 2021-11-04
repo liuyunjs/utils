@@ -7,6 +7,7 @@ import { isArray } from './isArray';
 import { isArrayLike } from './isArrayLike';
 import { isFunction } from './isFunction';
 import { isGeneratorFunction } from './isGeneratorFunction';
+import { isGenerator } from './isGenerator';
 import { isNil } from './isNil';
 import { isNull } from './isNull';
 import { isNumber } from './isNumber';
@@ -84,6 +85,8 @@ export {
   isSafeInteger,
   isPlainObject,
   isURLSearchParams,
+  isGeneratorFunction,
+  isGenerator,
   once,
   modulo,
   memoize,
@@ -98,5 +101,4 @@ export {
   set,
   equal,
   uniqueId,
-  isGeneratorFunction,
 };

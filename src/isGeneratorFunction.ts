@@ -1,3 +1,2 @@
-import isGeneratorFunction from 'is-generator-fn';
-
-export { isGeneratorFunction };
+export const isGeneratorFunction: (fn: any) => fn is GeneratorFunction =
+  require('is-generator').fn;

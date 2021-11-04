@@ -1226,6 +1226,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/is-generator@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/is-generator/-/is-generator-1.0.0.tgz#9b1b83bcfde96271cf93bc5411410216a02b9b9f"
+  integrity sha512-try+4qnOypsRJybpgkgwbRzzKDtxTNkGw/2d4ztHXuJzjWYyR+AKS2xTwsyx4RZxT6CJ0n1mX/VyWsc+8V1bWA==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
@@ -2610,10 +2615,10 @@ is-generator-fn@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-generator-fn/-/is-generator-fn-2.1.0.tgz#7d140adc389aaf3011a8f2a2a4cfa6faadffb118"
   integrity sha512-cTIB4yPYL/Grw0EaSzASzg6bBy9gqCofvWN8okThAYIxKJZC+udlRAmGbM0XLeniEJSs8uEgHPGuHSe1XsOLSQ==
 
-is-generator-fn@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/is-generator-fn/-/is-generator-fn-3.0.0.tgz#196814cf2e44a75212d34c12f3ce6f43a7821e7c"
-  integrity sha512-Kn+4AXo1HHewGjikHNfxCFv58+XGeXAalWE5Ci1bgm/DkmDte9zFyqMn6xrzQKCgyhefxz9I8rseWUGI0jSecQ==
+is-generator@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/is-generator/-/is-generator-1.0.3.tgz#c14c21057ed36e328db80347966c693f886389f3"
+  integrity sha1-wUwhBX7TbjKNuANHlmxpP4hjifM=
 
 is-glob@^3.1.0:
   version "3.1.0"
