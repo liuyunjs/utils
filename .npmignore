@@ -4,3 +4,4 @@ test
 *.log
 .idea
 .DS_Store
+tsconfig.json
