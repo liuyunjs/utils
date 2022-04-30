@@ -1,7 +1,3 @@
-// import clamp from 'just-clamp';
+import c from 'just-clamp';
 
-export const clamp: (
-  b1: number,
-  n: number,
-  b2: number,
-) => number = require('just-clamp');
+export const clamp = c as (b1: number, n: number, b2: number) => number;

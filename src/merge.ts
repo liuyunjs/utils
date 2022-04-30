@@ -1,4 +1,4 @@
-import { O } from 'ts-toolbelt';
+import type { O } from 'ts-toolbelt';
 import { isFunction } from './isFunction';
 import { isPlainObject } from './isPlainObject';
 import { isArray } from './isArray';
@@ -27,12 +27,13 @@ const mergeBase = (t: any, s: any) => {
   }
 };
 
-export function merge<T extends Record<string, any>, Tn extends Record<string, any>[]>(
-  target: T,
-  ...otherObjects: Tn
-): O.Assign<T, Tn, 'deep'>;
+export function merge<
+  T extends Record<string, any>,
+  Tn extends Record<string, any>[],
+>(target: T, ...otherObjects: Tn): O.Assign<T, Tn, 'deep'>;
 export function merge(t: any) {
-  if (!isObj(t)) throw new TypeError('target must be a Array、 PlainObject or Function');
+  if (!isObj(t))
+    throw new TypeError('target must be a Array、 PlainObject or Function');
   for (let i = 1, len = arguments.length, s; i < len; i++) {
     s = arguments[i];
     if (isObj(s)) mergeBase(t, s);

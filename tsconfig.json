@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "importHelpers": true,
@@ -8,7 +8,7 @@
     "preserveConstEnums": true,
     "sourceMap": false,
     "noUnusedLocals": true,
-    "target": "es3",
+    "target": "es5",
     "watch": false,
     "alwaysStrict": true,
     "declaration": true,
@@ -19,8 +19,7 @@
     "skipLibCheck": true,
     "rootDir": "./src",
     "outDir": "lib",
-    "baseUrl": "./",
-    "jsx": "react"
+    "baseUrl": "./"
   },
   "include": ["src"],
   "exclude": ["node_modules"]
