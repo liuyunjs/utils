@@ -1,3 +1,1 @@
-import { interval, timeout } from '@liuyunjs/timer';
-
-export { interval, timeout };
+export { interval, timeout } from '@liuyunjs/timer';

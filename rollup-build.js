@@ -103,25 +103,17 @@ const build = async (inputPath) => {
   const dir = await fs.readdir(inputPath);
 
   for (const item of dir) {
-    if (item === '.DS_Store') continue;
     const currPath = path.join(inputPath, '/', item);
     if ((await fs.stat(currPath)).isDirectory()) {
       await build(currPath);
-    } else {
+    } else if (item.endsWith('.ts')) {
       if (currPath === rootInputFile) {
-        await buildInternal(currPath, {
-          outputs: defaultOutputs.slice(0, 1),
-        });
-        await buildInternal(currPath, {
-          outputs: defaultOutputs.slice(1),
-          // 输出ts声明文件
-          plugins: declarationPlugins,
-        });
         await buildInternal(currPath, {
           // 打包umd
           outputs: ['umd'],
           external: [],
         });
+        await buildInternal(currPath, { plugins: declarationPlugins });
       } else {
         await buildInternal(currPath);
       }
