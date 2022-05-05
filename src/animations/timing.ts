@@ -7,7 +7,7 @@ export interface TimingConfig extends IAnimateConfig {
 }
 
 export class Timing extends Animate<TimingConfig> {
-  protected __configDefine() {
+  protected _getDefaultConfig() {
     return {
       from: 0,
       to: 1,
@@ -16,25 +16,17 @@ export class Timing extends Animate<TimingConfig> {
     };
   }
 
-  protected _animate(subscribe: (curr: number, finished: boolean) => any) {
-    const startTime = Date.now();
-    const distance = this.__config.to - this.__config.from;
+  calcDelta(distance: number = this.__config.to - this.__config.from): number {
+    return (
+      distance * this.__config.easing(this.__deltaTime / this.__config.duration)
+    );
+  }
 
-    const step = () => {
-      const now = Date.now();
-      const deltaTime = (now - startTime) / this.__config.duration;
-      const finished = deltaTime >= 1;
-      if (finished) {
-        this.__curr = this.__config.to;
-      } else {
-        this.__curr =
-          this.__config.from + distance * this.__config.easing(deltaTime);
-        this.__frame.request(step);
-      }
-      subscribe(this.__curr, finished);
-    };
-
-    step();
+  protected _animate() {
+    this.__finished = this.__deltaTime / this.__config.duration >= 1;
+    this.__curr = this.__finished
+      ? this.__config.to
+      : this.__config.from + this.calcDelta();
   }
 
   to(to: number) {

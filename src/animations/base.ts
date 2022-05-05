@@ -12,16 +12,18 @@ export abstract class Animate<Config extends IAnimateConfig = IAnimateConfig> {
 
   protected __finished: boolean = true;
 
+  protected __deltaTime: number = 0;
+
   constructor(config?: Partial<Config>) {
     this.__config = this._mergeConfig(config);
   }
 
-  protected __configDefine(): Config {
+  protected _getDefaultConfig(): Config {
     return {} as Config;
   }
 
   private _mergeConfig(config?: Partial<Config>): Config {
-    return Object.assign({}, this.__configDefine(), config);
+    return Object.assign({}, this._getDefaultConfig(), config);
   }
 
   get finished() {
@@ -32,6 +34,10 @@ export abstract class Animate<Config extends IAnimateConfig = IAnimateConfig> {
     return new (this.constructor as typeof Object)(this._mergeConfig(config));
   }
 
+  calcDelta() {
+    return 0;
+  }
+
   stop() {
     this.__frame.cancel();
     this.__finished = true;
@@ -40,17 +46,27 @@ export abstract class Animate<Config extends IAnimateConfig = IAnimateConfig> {
   start(subscribe: (curr: number, finished: boolean) => any) {
     this.stop();
     this.__curr = this.__config.from;
-    this._animate((curr: number, finished: boolean) => {
-      this.__finished = finished;
-      subscribe(curr, finished);
-    });
 
+    const startTime = Date.now();
+
+    const step = () => {
+      const now = Date.now();
+      this.__deltaTime = now - startTime;
+
+      this._animate();
+
+      if (!this.__finished) {
+        this.__frame.request(step);
+      }
+
+      subscribe(this.__curr, this.__finished);
+    };
+
+    step();
     return this;
   }
 
-  protected abstract _animate(
-    subscribe: (curr: number, finished: boolean) => any,
-  ): any;
+  protected abstract _animate(): any;
 
   from(from: number) {
     this.__config.from = from;
